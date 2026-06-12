@@ -64,14 +64,14 @@ public partial class GalaxyUnleashed : IDisposable
 
                 return true;
             }
-            else if (inputHookClientNativeMessage.WParam == Config.ReloadKey)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("Reload"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
-                    Config.LoadConfig(); // reload config
+                    Keybinds.LoadConfig(@"mods\galaxy-unleashed\keybinds.json"); // reload config
                     for (int i = 0; i < _instance._charactersInfo?.Length; i++)
                     {
-                        if (_instance._charactersInfo[i].PrefabResourcePath.IndexOf(Config.NPCDefault) != -1)
+                        if (_instance._charactersInfo[i].PrefabResourcePath.IndexOf(char_id) != -1)
                         {
                             char_id = _instance._charactersInfo[i].Id;
                             Process.Start(new ProcessStartInfo //using System.Diagnostics;
@@ -84,14 +84,14 @@ public partial class GalaxyUnleashed : IDisposable
                     }
                 }
             }
-            else if (inputHookClientNativeMessage.WParam == Config.ToggleBattleKey)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("ToggleBattle"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
                     _instance.LoadOverlay(false);
                 }
             }
-            else if (inputHookClientNativeMessage.WParam == Config.PlaceNPCKey)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("PlaceNPC"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -111,7 +111,7 @@ public partial class GalaxyUnleashed : IDisposable
                 }
                 return true;
             }
-            else if (inputHookClientNativeMessage.WParam == Config.PlaceSpawnerKey)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("PlaceSpawner"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -125,7 +125,7 @@ public partial class GalaxyUnleashed : IDisposable
                                 NpcSpawningIntervalSeconds = 5,
                                 NpcPreset = new()
                                 {
-                                    CharacterId = Config.NPCDefault,
+                                    CharacterId = char_id,
                                     CharacterOverrideFactionId = null
                                 }
                             },
@@ -135,7 +135,7 @@ public partial class GalaxyUnleashed : IDisposable
                 }
                 return true;
             }
-            else if (inputHookClientNativeMessage.WParam == Config.PlaceFlagKey)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("PlaceFlag"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -146,7 +146,7 @@ public partial class GalaxyUnleashed : IDisposable
                 }
                 return true;
             }
-            else if (inputHookClientNativeMessage.WParam == Config.ClearNPCKey)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("ClearNPC"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -159,25 +159,25 @@ public partial class GalaxyUnleashed : IDisposable
                 }
                 return true;
             }
-            else if (inputHookClientNativeMessage.WParam == Config.BoostJumpKey)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("BoostJump"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
                     if (_instance._playerEntityLastPosition != null)
                     {
-                        _instance._jumpBooster.State.Config.JumpHeightMultiplier = Config.JumpSpeed;
+                        _instance._jumpBooster.State.Config.JumpHeightMultiplier = 10;
                         _instance._jumpBooster.State.IsEnabled = !_instance._jumpBooster.State.IsEnabled;
                     }
                 }
                 return true;
             }
-            else if (inputHookClientNativeMessage.WParam == Config.BoostJetpackKey)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("BoostJetpack"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
                     if (_instance._playerEntityLastPosition != null)
                     {
-                        _instance._jetpackBooster.State.Config.TurboSpeedMultiplier = Config.JetpackSpeed;
+                        _instance._jetpackBooster.State.Config.TurboSpeedMultiplier = 22;
                         _instance._jetpackBooster.State.IsEnabled = !_instance._jetpackBooster.State.IsEnabled;
                     }
                 }

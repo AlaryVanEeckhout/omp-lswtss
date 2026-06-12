@@ -112,6 +112,56 @@ public static class BuildGalaxyUnleashed
                         ["Id"] = "QuickAction",
                         ["KeyCode"] = 113,
                     },
+                    new JObject
+                    {
+                        ["Id"] = "ToggleBattle",
+                        ["KeyCode"] = 46,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "NPCnext",
+                        ["KeyCode"] = 120,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "NPCnext",
+                        ["KeyCode"] = 121,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "Reload",
+                        ["KeyCode"] = 35,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "PlaceNPC",
+                        ["KeyCode"] = 114,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "PlaceSpawner",
+                        ["KeyCode"] = 115,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "PlaceFlag",
+                        ["KeyCode"] = 116,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "ClearNPC",
+                        ["KeyCode"] = 117,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "BoostJump",
+                        ["KeyCode"] = 118,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "BoostJetpack",
+                        ["KeyCode"] = 119,
+                    },
                 },
             }.ToString(Newtonsoft.Json.Formatting.Indented)
         );
