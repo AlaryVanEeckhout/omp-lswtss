@@ -92,5 +92,28 @@ public static class BuildGalaxyUnleashed
                 },
             }.ToString(Newtonsoft.Json.Formatting.Indented)
         );
+
+        File.WriteAllText(
+            Path.Combine(
+                galaxyUnleashedDistDirPath,
+                "keybinds.json"
+            ),
+            new JObject
+            {
+                ["_keybindsInfo"] = new JArray
+                {
+                    new JObject
+                    {
+                        ["Id"] = "OpenMenu",
+                        ["KeyCode"] = 112,
+                    },
+                    new JObject
+                    {
+                        ["Id"] = "QuickAction",
+                        ["KeyCode"] = 113,
+                    },
+                },
+            }.ToString(Newtonsoft.Json.Formatting.Indented)
+        );
     }
 }

@@ -12,5 +12,6 @@ public static class BuildAll
         BuildV1.Execute();
         BuildDebugTools.Execute();
         BuildTestCefMod.Execute();
+        BuildGalaxyUnleashed.Execute();
     }
 }

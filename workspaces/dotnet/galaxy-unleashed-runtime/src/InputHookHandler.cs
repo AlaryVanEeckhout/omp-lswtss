@@ -25,7 +25,7 @@ public partial class GalaxyUnleashed : IDisposable
 
         if (_instance._modeState is PlayModeState)
         {
-            if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == PInvoke.User32.VirtualKey.VK_F1)
+            if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("OpenMenu"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -200,7 +200,7 @@ public partial class GalaxyUnleashed : IDisposable
         }
         else if (_instance._modeState is QuickSpawnNpcsModeState quickSpawnNpcsModeState)
         {
-            if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == PInvoke.User32.VirtualKey.VK_F1)
+            if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("OpenMenu"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -219,7 +219,7 @@ public partial class GalaxyUnleashed : IDisposable
 
                 return true;
             }
-            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == PInvoke.User32.VirtualKey.VK_F2)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("QuickAction"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -239,7 +239,7 @@ public partial class GalaxyUnleashed : IDisposable
         }
         else if (_instance._modeState is CreateNpcSpawnersModeState createNpcSpawnersModeState)
         {
-            if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == PInvoke.User32.VirtualKey.VK_F1)
+            if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("OpenMenu"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -258,7 +258,7 @@ public partial class GalaxyUnleashed : IDisposable
 
                 return true;
             }
-            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == PInvoke.User32.VirtualKey.VK_F2)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("QuickAction"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -276,7 +276,7 @@ public partial class GalaxyUnleashed : IDisposable
         }
         else if (_instance._modeState is ManageBattleFlagModeState)
         {
-            if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == PInvoke.User32.VirtualKey.VK_F1)
+            if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("OpenMenu"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
@@ -295,7 +295,7 @@ public partial class GalaxyUnleashed : IDisposable
 
                 return true;
             }
-            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == PInvoke.User32.VirtualKey.VK_F2)
+            else if ((PInvoke.User32.VirtualKey)inputHookClientNativeMessage.WParam == (PInvoke.User32.VirtualKey)Keybinds.GetKeyCode("QuickAction"))
             {
                 if ((PInvoke.User32.WindowMessage)inputHookClientNativeMessage.Type == PInvoke.User32.WindowMessage.WM_KEYUP)
                 {
