@@ -1,2 +1,8 @@
 /bin
 /obj
+/c-api1
+/c-func-hook1
+/input-hook1
+/overlay1
+/v1
+/.vs
