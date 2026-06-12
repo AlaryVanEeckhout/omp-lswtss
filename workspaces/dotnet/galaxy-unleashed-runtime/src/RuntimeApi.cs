@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -13,7 +14,7 @@ public partial class GalaxyUnleashed
         {
             ContractResolver = new CamelCasePropertyNamesContractResolver()
         };
-
+        
         public string FetchCharactersInfo(string argsAsJson)
         {
             if (_instance!._charactersInfo == null)

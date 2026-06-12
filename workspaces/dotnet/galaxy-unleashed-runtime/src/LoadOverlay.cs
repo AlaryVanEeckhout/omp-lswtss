@@ -25,7 +25,7 @@ public partial class GalaxyUnleashed : IDisposable
         {
             try
             {
-                Process.Start(new ProcessStartInfo
+                Process.Start(new ProcessStartInfo //using System.Diagnostics;
                 {
                     FileName = "explorer",
                     Arguments = "\"" + targetUrl + "\""
@@ -40,7 +40,7 @@ public partial class GalaxyUnleashed : IDisposable
         }
     }
 
-    void LoadOverlay()
+    void LoadOverlay(bool safe = true)
     {
         _overlay.ChromiumWebBrowser.JavascriptObjectRepository.NameConverter =
             new CefSharp.JavascriptBinding.CamelCaseJavascriptNameConverter();
@@ -66,9 +66,11 @@ public partial class GalaxyUnleashed : IDisposable
                 "index.html"
             ).Replace("\\", "/");
 
-            overlayUrl = "file://" + overlayIndexHtmlFilePath;
+            overlayUrl = "file://" + overlayIndexHtmlFilePath + " --allow-file-access-from-files";
         }
-
-        _overlay.ChromiumWebBrowser.LoadUrl(overlayUrl);
+        if (!safe)
+        {
+            _overlay.ChromiumWebBrowser.LoadUrl(overlayUrl);
+        }
     }
 }

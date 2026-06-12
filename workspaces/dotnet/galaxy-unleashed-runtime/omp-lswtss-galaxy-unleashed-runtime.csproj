@@ -33,6 +33,10 @@
       <HintPath>..\..\..\dist\v1\omp-lswtss-v1.dll</HintPath>
       <Private>false</Private>
     </Reference>
+	<Reference Include="omp-lswtss-runtime-engine">
+      <HintPath>..\..\..\dist\omp-lswtss-runtime-engine-0.0.1\omp-lswtss-runtime-engine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <PackageReference Include="PInvoke.User32" Version="0.7.124" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
